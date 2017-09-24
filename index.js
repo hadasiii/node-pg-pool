@@ -1,7 +1,7 @@
 var genericPool = require('generic-pool')
 var util = require('util')
 var objectAssign = require('object-assign')
-var EventEmitter = require('promise-events');
+var EventEmitter = require('promise-events')
 
 // there is a bug in the generic pool where it will not recreate
 // destroyed workers (even if there is waiting work to do) unless
@@ -97,17 +97,16 @@ Pool.prototype._create = function (cb) {
     if (err) {
       this.log('client connection error:', err)
       cb(err, null)
-      return;
+      return
     }
 
     this.log('client connected')
-    this.emit('connect',  client)
-      .then(()=>{
-          this.log('came back from connect')
-          cb(null, client)
+    this.emit('connect', client)
+      .then(() => {
+        this.log('came back from connect')
+        cb(null, client)
       })
       .catch(err => cb(err, null))
-
   }.bind(this))
 }
 
