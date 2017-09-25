@@ -41,7 +41,7 @@ describe('events', function () {
     })
   })
 
-  it.only('catch error on connect', function (done) {
+  it('catch error on connect', function (done) {
     var pool = new Pool()
     var connectingErr = 'connecting error'
     pool.on('connect', function (client) {
