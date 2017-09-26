@@ -78,7 +78,7 @@ const pool = new Pool(config);
     ssl: true
   }
 */
-``` 
+```
 
 ### acquire clients with a promise
 
